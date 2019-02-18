@@ -74,4 +74,21 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             return true
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("ConversionView appeared")
+        
+        if isNight() {
+            view.backgroundColor = UIColor.darkGray
+        }
+    }
+    
+    func isNight() -> Bool {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        
+        return hour < 7 && hour > 20
+    }
+    
 }
