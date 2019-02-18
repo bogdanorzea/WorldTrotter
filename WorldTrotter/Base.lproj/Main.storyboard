@@ -102,7 +102,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hdC-GU-1Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="520"/>
+            <point key="canvasLocation" x="2754" y="134"/>
+        </scene>
+        <!--Website-->
+        <scene sceneID="GGv-Td-hWH">
+            <objects>
+                <viewController id="3gH-c2-g5f" customClass="WebsiteViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SRM-zz-nWB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mGN-bt-Zxr"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Website" image="Webpage" id="ywt-JQ-EQP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c7c-Fk-Mle" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1854" y="532"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lcv-wd-i0n">
@@ -110,21 +126,24 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="x7S-l3-R7d" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Md-87-Kb0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="S8v-zO-Ztp"/>
                         <segue destination="3rQ-j7-TTH" kind="relationship" relationship="viewControllers" id="OlC-cB-wxc"/>
+                        <segue destination="3gH-c2-g5f" kind="relationship" relationship="viewControllers" id="GPH-vO-qW1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QY8-7m-lyV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="133.5832083958021"/>
+            <point key="canvasLocation" x="820" y="134"/>
         </scene>
     </scenes>
     <resources>
         <image name="ConvertIcon" width="48.5" height="32.5"/>
         <image name="MapIcon" width="48.5" height="32.5"/>
+        <image name="Webpage" width="24" height="24"/>
     </resources>
 </document>
