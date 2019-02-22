@@ -38,8 +38,8 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
-        if let text = textField.text, let value = Double(text) {
-            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+        if let text = textField.text, let number = numberFormatter.number(from: text) {
+            fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         } else {
             fahrenheitValue = nil
         }
@@ -60,8 +60,11 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
-        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
-        let replacementTextHasDecimalSeparator = string.range(of: ".")
+        let currentLocale = Locale.current
+        let decimalSeparator = currentLocale.decimalSeparator ?? "."
+        
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeparator)
+        let replacementTextHasDecimalSeparator = string.range(of: decimalSeparator)
         
         if string.rangeOfCharacter(from: CharacterSet.letters) != nil {
             return false
@@ -76,8 +79,6 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("ConversionView appeared")
-        
         if isNight() {
             view.backgroundColor = UIColor.darkGray
         }
@@ -88,7 +89,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         
-        return hour < 7 && hour > 20
+        return hour < 7 || hour > 20
     }
     
 }

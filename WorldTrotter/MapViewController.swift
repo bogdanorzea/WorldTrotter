@@ -13,9 +13,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var mapView: MKMapView!
     var locationManager: CLLocationManager?
     var currentCoordinates: CLLocationCoordinate2D?
-    let locations = ["Birth place": (lat:45.6580, long: 25.6012),
-                     "Current place": (lat: 43.6532, long:-79.3832),
-                     "Dream place": (lat:35.6895, long: 139.6917)]
+    let locations = [
+        NSLocalizedString("Birth place", comment: "Birth place annotation"): (lat:45.6580, long: 25.6012),
+        NSLocalizedString("Current place", comment: "Current place annotation"): (lat: 43.6532, long:-79.3832),
+        NSLocalizedString("Dream place", comment: "Dream place annotation"): (lat:35.6895, long: 139.6917)]
     var currentLocationIndex = 0
     var annotations: [MKPointAnnotation] = []
     
@@ -24,7 +25,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         view = mapView
         
         // Add Segment to select map type
-        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
+        let standardString = NSLocalizedString("Standard", comment: "Standard map view")
+        let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
+        let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
+        
+        let segmentedControl = UISegmentedControl(items: [standardString, hybridString, satelliteString])
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent(0.9)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false

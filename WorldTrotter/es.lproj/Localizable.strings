@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  WorldTrotter
+
+  Created by Bogdan Orzea on 2/20/19.
+  Copyright © 2019 Bogdan Orzea. All rights reserved.
+*/
+
+/* Birth place annotation */
+"Birth place" = "Lugar de nacimiento";
+
+/* Current place annotation */
+"Current place" = "Lugar actual";
+
+/* Dream place annotation */
+"Dream place" = "Lugar de ensueño";
+
+/* Hybrid map view */
+"Hybrid" = "Híbrido";
+
+/* Satellite map view */
+"Satellite" = "Satélite";
+
+/* Standard map view */
+"Standard" = "Estándar";
+
